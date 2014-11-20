@@ -17,10 +17,10 @@ After installing the package, simply bind the command to a key in
 =haskell-mode-map=. For example:
 
 #+BEGIN_SRC emacs-lisp
-(add-hook 'haskell-mode-hook
-          (lambda () (define-key haskell-mode-map
-                                 (kbd "C-c C-d d")
-                                 #'ghc-imported-from-haddock-for-symbol-at-point)))
+(eval-after-load 'haskell-mode
+          `(define-key haskell-mode-map
+                       (kbd "C-c C-d d")
+                       #'ghc-imported-from-haddock-for-symbol-at-point))
 #+END_SRC
 
 If =ghc-imported-from= is not on Emacs's default path, then you can
