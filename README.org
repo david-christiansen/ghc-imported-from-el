@@ -1,0 +1,28 @@
+* Emacs support for ghc-imported-from
+
+[[http://melpa.org/#/ghc-imported-from][file:http://melpa.org/packages/ghc-imported-from-badge.svg]]     [[http://stable.melpa.org/#/ghc-imported-from][file:http://stable.melpa.org/packages/ghc-imported-from-badge.svg]]
+
+** Purpose
+This is an Emacs front-end for Carlo Hamalainen's =ghc-imported-from=,
+a command-line tool for finding Haddock documentation for symbols in
+Haskell source files. Because it uses =cabal= and =ghc=, it's
+sandbox-aware.
+
+It requires that you have a copy of =ghc-imported-from= available. You
+can get it from Hackage with =cabal install ghc-imported-from=, or get
+the source from [[https://github.com/carlohamalainen/ghc-imported-from][GitHub]].
+
+** Instructions
+After installing the package, simply bind the command to a key in
+=haskell-mode-map=. For example:
+
+#+BEGIN_SRC emacs-lisp
+(add-hook 'haskell-mode-hook
+          (lambda () (define-key haskell-mode-map
+                                 (kbd "C-c C-d d")
+                                 #'ghc-imported-from-haddock-for-symbol-at-point)))
+#+END_SRC
+
+If =ghc-imported-from= is not on Emacs's default path, then you can
+customize the variable =ghc-imported-from-command-name= to point it at
+the correct absolute path.
