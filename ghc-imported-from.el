@@ -6,7 +6,7 @@
 ;; Maintainer: David Raymond Christiansen <david@davidchristiansen.dk>
 ;; Keywords: languages
 ;; Package-Requires: ((emacs "24.1"))
-;; Version: 0.1.0
+;; Version: 0.1.1
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -39,6 +39,7 @@
   :type 'file
   :group 'ghc-imported-from)
 
+;;;###autoload
 (defun ghc-imported-from-haddock-for-symbol-at-point ()
   "Look up the Haddock for the symbol under point in a Haskell
 buffer using the ghc-imported-from command-line utility.
