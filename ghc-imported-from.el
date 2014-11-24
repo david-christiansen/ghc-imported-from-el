@@ -58,7 +58,7 @@ If ghc-imported-from is not on your $PATH, customize
          (column (current-column))
          (module (save-excursion
                    (goto-char (point-min))
-                   (if (re-search-forward "^module\\s-+\\([A-Za-z0-9.]+\\)\\s-+where"
+                   (if (re-search-forward "^module\\s-+\\([A-Za-z0-9.]+\\)\\s-"
                                           nil t)
                        (match-string 1)
                      (error "Couldn't determine module name for buffer")))))
